@@ -1,2 +1,5 @@
 build
 .cache
+/dist/
+/target/
+/Cargo.lock
