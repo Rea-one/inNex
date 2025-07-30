@@ -1,3 +1,9 @@
+mod components;
+mod model;
+mod net;
+mod utils;
+mod shifts;
+
 mod app;
 
 use app::*;
