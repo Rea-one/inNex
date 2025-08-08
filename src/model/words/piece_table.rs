@@ -1,4 +1,4 @@
-enum PieceType {
+pub enum PieceType {
     Original,
     Added,
 }
@@ -35,6 +35,13 @@ impl PieceTable {
         self.history_length += 1;
         self.now = self.history_length - 1;
     }
-
     
+    /// 获取当前 token 索引
+    pub fn request(&self) -> usize {
+        if self.added.is_empty() || self.now == 0 {
+            self.original
+        } else {
+            self.added[self.now - 1]
+        }
+    }
 }

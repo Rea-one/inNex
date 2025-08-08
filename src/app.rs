@@ -1,8 +1,9 @@
-use leptos::task::spawn_local;
-use leptos::{ev::SubmitEvent, prelude::*};
+
+use leptos::prelude::*;
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
-use crate::components::editor;
+
+use crate::components::*;
 
 #[wasm_bindgen]
 extern "C" {
@@ -19,7 +20,8 @@ struct GreetArgs<'a> {
 pub fn App() -> impl IntoView {
     view! {
         <main class="container">
-            <editor::Editor texts="欢迎使用Leptos-Tauri-Template".to_string() on_change=Some(Callback::new(move |_| {})) />
+            <div class="scoller">
+            </div>
         </main>
     }
 }

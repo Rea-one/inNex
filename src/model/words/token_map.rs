@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::collections::VecDeque;
 
-use crate::model::mexp::token::Token;
+use crate::model::words::token::Token;
 
 pub struct TokenMap {
     map: HashMap<String, usize>,
@@ -68,6 +68,14 @@ impl TokenMap {
     
     pub fn get(&self, index: usize) -> Option<&Token> { 
         self.tokens.get(index)
+    }
+
+    pub fn get_string(&self, index: usize) -> String {
+        if let Some(token) = self.tokens.get(index) {
+            token.get_token()
+        } else {
+            String::new()
+        }
     }
 
     pub fn find(&self, token: String) -> Option<usize> { 

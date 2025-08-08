@@ -1,4 +1,5 @@
 pub mod ana;
 pub mod graph;
 pub mod file;
-pub mod mexp;
+pub mod words;
+pub mod visual;

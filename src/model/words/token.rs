@@ -1,3 +1,4 @@
+use std::fmt;
 
 #[derive(PartialEq, Copy, Clone)]
 pub enum WordType {
@@ -22,11 +23,6 @@ pub fn word_type(word: char) -> WordType {
     }
 }
 
-enum token_state {
-    init,
-    ana,
-}
-
 pub struct Token {
     token: String,
     length: usize,
@@ -42,5 +38,11 @@ impl Token {
 
     pub fn get_token(&self) -> String {
         self.token.clone()
+    }
+}
+
+impl fmt::Display for Token {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", self.token)
     }
 }
